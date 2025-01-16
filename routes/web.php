@@ -1,21 +1,16 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-})->name('home');
 
-Route::get('contact', function () {
-    return view('frontend.contact.index');
-})->name('contact');
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 
-Route::get('faq', function () {
-    return view('frontend.faq.index');
-})->name('faq');
 
-Route::get('about', function () {
-    return view('frontend.about.index');
-})->name('about');
+Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 
