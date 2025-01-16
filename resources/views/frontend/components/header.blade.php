@@ -2,16 +2,17 @@
         <header class="main-header style2">
             <!-- Header Lower -->
             <div class="header-lower">
-                <div class="container2">
+                <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="inner-container flex justify-space align-center">
                                 <!-- Logo Box -->
                                 <div class="logo-box flex">
                                     <div class="logo"><a href="index.html">
-                                            <img class="lazyload" data-src="{{ asset('frontend/logo/automach_light.svg') }}"
-                                                src="{{ asset('frontend/logo/automach_light.svg') }}" alt="" width="225"
-                                                height="40"></a></div>
+                                            <img class="lazyload"
+                                                data-src="{{ asset('frontend/logo/automach_light.svg') }}"
+                                                src="{{ asset('frontend/logo/automach_light.svg') }}" alt=""
+                                                width="225" height="40"></a></div>
                                 </div>
                                 <div class="nav-outer flex align-center">
                                     <!-- Main Menu -->
@@ -23,10 +24,6 @@
                                     <!-- Main Menu End-->
                                 </div>
                                 <div class="header-account flex align-center">
-
-
-
-
                                     <div class="flat-bt-top">
                                         <a class="sc-button" href="add-listing.html">
                                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
@@ -53,9 +50,7 @@
                                         </a>
                                     </div>
                                 </div>
-
                                 <div class="mobile-nav-toggler mobile-button"><span></span></div>
-
                             </div>
                         </div>
                     </div>
@@ -70,7 +65,8 @@
                 <nav class="menu-box">
                     <div class="nav-logo"><a href="index.html">
                             <img class="lazyload" data-src="assets/images/logo/logo@2x.png"
-                                src="assets/images/logo/logo@2x.png" alt="" width="197" height="48"></a></div>
+                                src="assets/images/logo/logo@2x.png" alt="" width="197" height="48"></a>
+                    </div>
                     <div class="bottom-canvas">
                         <div class="login-box flex align-center">
                             <i class="icon-autodeal-user fs-20"></i>
@@ -94,8 +90,9 @@
                                             fill="white" />
                                     </g>
                                     <defs>
-                                        <clipPath >
-                                            <rect width="20" height="20" fill="white" transform="translate(0.5)" />
+                                        <clipPath>
+                                            <rect width="20" height="20" fill="white"
+                                                transform="translate(0.5)" />
                                         </clipPath>
                                     </defs>
                                 </svg>

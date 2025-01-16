@@ -1,5 +1,5 @@
 <section class="flat-title">
-    <div class="container2">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-inner style">
