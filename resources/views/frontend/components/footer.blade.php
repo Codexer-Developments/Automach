@@ -82,11 +82,11 @@
                                                 placeholder="Your email address" required="">
                                         </fieldset>
                                     </div>
-                                    <button name="submit" type="submit"
-                                        class="button btn-submit-comment btn-1 btn-8">
+                                    <button name="submit" type="submit" class="button btn-submit-comment btn-1 btn-8">
                                         <span>Send</span>
                                     </button>
                                 </form>
+                                <p class="text-warning d-none" id="message" style="color: #FF7101 !important"></p>
                             </div>
 
                         </div>
@@ -106,7 +106,9 @@
                     </div>
                     <div class="col-lg-8 col-md-12">
                         <div class="footer-bottom-right flex-six flex-wrap ">
-                            <div class="title-bottom center">© {{ date('Y') }} Auto Decar. All rights reserved | Design & Developed By <a class="text-color-3" href="http://codexer.co.uk">Codexer</a></div>
+                            <div class="title-bottom center">© {{ date('Y') }} Auto Decar. All rights reserved |
+                                Design & Developed By <a class="text-color-3" href="http://codexer.co.uk">Codexer</a>
+                            </div>
                             <div class="icon-social box-3 text-color-1">
                                 <a href="#"><i class="icon-autodeal-facebook"></i></a>
                                 <a href="#"><i class="icon-autodeal-linkedin"></i></a>
@@ -120,3 +122,46 @@
             </div>
         </div>
     </footer><!-- /#footer -->
+
+    @push('scripts')
+    <script>
+        $(document).ready(function () {
+            $('.comment-form').on('submit', function (e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Clear any previous messages
+                $('#message').text('').removeClass('d-none');
+
+                // Perform the AJAX request
+                $.ajax({
+                    url: "{{ route('newsletter.subscribe') }}", // Use the correct route
+                    method: "POST",
+                    data: $(this).serialize(), // Serialize the form data
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Add CSRF token
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            // Display success message
+                            $('#message').text(response.message).addClass('text-success').removeClass('text-warning');
+
+                            // Clear the email input field
+                            $('.comment-form input[name="email"]').val('');
+                        } else {
+                            // Display error message
+                            $('#message').text(response.message).addClass('text-warning').removeClass('text-success');
+                        }
+                    },
+                    error: function (xhr) {
+                        // Handle server errors (e.g., validation errors)
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            $('#message').text(xhr.responseJSON.message).addClass('text-warning').removeClass('text-success');
+                        } else {
+                            $('#message').text('An error occurred. Please try again.').addClass('text-warning').removeClass('text-success');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    @endpush

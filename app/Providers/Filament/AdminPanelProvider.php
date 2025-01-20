@@ -16,6 +16,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
@@ -27,6 +28,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandLogo(asset('frontend/logo/automach_dark.svg'))
+            ->darkModeBrandLogo(asset('frontend/logo/automach_light.svg'))
+            ->brandLogoHeight(fn() => Auth::check() ? '1.6rem' : '3rem')
+            ->favicon(asset('frontend/logo/preloader.png'))
             ->colors([
                 'primary' => Color::Amber,
             ])
