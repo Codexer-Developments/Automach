@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 
 class Car extends Model
 {
@@ -33,9 +34,25 @@ class Car extends Model
         'drive_type',
         'brand_id',
         'car_model_id',
+        'image_urls',
         'user_id',
     ];
 
+    protected $casts = [
+        'image_urls' => 'array', // Cast image_urls to JSON
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Delete associated images when a car is deleted
+        static::deleting(function ($car) {
+            foreach ($car->image_urls as $image) {
+                Storage::disk('public')->delete($image['url']);
+            }
+        });
+    }
     // A car belongs to a brand
     public function brand(): BelongsTo
     {

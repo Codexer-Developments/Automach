@@ -6,6 +6,7 @@ use App\Filament\Resources\CarResource\Pages;
 use App\Filament\Resources\CarResource\RelationManagers;
 use App\Models\Car;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -14,6 +15,10 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteAction;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class CarResource extends Resource
 {
@@ -132,13 +137,18 @@ class CarResource extends Resource
                         return [];
                     })
                     ->required(),
-                Forms\Components\FileUpload::make('images')
+                Repeater::make('image_urls')
                     ->label('Images')
-                    ->multiple()
-                    ->directory('cars/images')
-                    ->image()
-                    ->maxSize(2048) // 2MB max file size
-                    ->required(),
+                    ->schema([
+                        FileUpload::make('url') // Store the file path in the 'url' key
+                            ->label('Image')
+                            ->directory('car-images') // Folder to store images in the `storage/app/public` directory
+                            ->image() // Restrict to image files
+                            ->required(),
+                    ])
+                    ->orderable('url') // Allow reordering of images
+                    ->defaultItems(1), // Default number of image upload fields
+
                 Forms\Components\CheckboxList::make('features')
                     ->label('Features')
                     ->relationship('features', 'name')
@@ -147,33 +157,162 @@ class CarResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
+    // public static function table(Table $table): Table
+    // {
+    //     return $table
+    //         ->columns([
+    //             Tables\Columns\TextColumn::make('name')
+    //                 ->label('Car Name')
+    //                 ->sortable()
+    //                 ->searchable(),
+    //             Tables\Columns\TextColumn::make('brand.name')
+    //                 ->label('Brand')
+    //                 ->sortable()
+    //                 ->searchable(),
+    //             Tables\Columns\TextColumn::make('carModel.name')
+    //                 ->label('Car Model')
+    //                 ->sortable()
+    //                 ->searchable(),
+    //             Tables\Columns\TextColumn::make('price')
+    //                 ->label('Price')
+    //                 ->sortable()
+    //                 ->money('USD'),
+    //             Tables\Columns\TextColumn::make('condition')
+    //                 ->label('Condition')
+    //                 ->sortable(),
+    //             Tables\Columns\TextColumn::make('created_at')
+    //                 ->label('Created At')
+    //                 ->dateTime()
+    //                 ->sortable(),
+    //         ])
+    //         ->filters([
+    //             // Add filters if needed
+    //         ])
+    //         ->actions([
+    //             EditAction::make(), // Add Edit action
+    //             DeleteAction::make(), // Add Delete action
+    //         ])
+    //         ->defaultSort('created_at', 'desc');
+    // }
+
+    public static function table(Tables\Table $table): Tables\Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                ImageColumn::make('image_urls')
+                    ->label('Images')
+                    ->getStateUsing(function ($record) {
+                        // Display the first image
+                        return $record->image_urls[0]['url'] ?? null;
+                    })
+                    ->circular() // Optional: Display the image as a circle
+                    ->toggleable()
+                    ->searchable(), // Visible by default
+
+                TextColumn::make('name')
                     ->label('Car Name')
                     ->sortable()
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('brand.name')
-                    ->label('Brand')
-                    ->sortable()
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('carModel.name')
-                    ->label('Car Model')
-                    ->sortable()
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('price')
+                    ->searchable(), // Visible by default
+
+                TextColumn::make('miles')
+                    ->label('Miles')
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('price')
                     ->label('Price')
-                    ->sortable()
-                    ->money('USD'),
-                Tables\Columns\TextColumn::make('condition')
+                    ->sortable(), // Visible by default
+
+                TextColumn::make('year')
+                    ->label('Year')
+                    ->sortable(), // Visible by default
+
+                TextColumn::make('fuel_type')
+                    ->label('Fuel Type')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('transmission')
+                    ->label('Transmission')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('owners')
+                    ->label('Owners')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('description')
+                    ->label('Description')
+                    ->limit(50)
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('condition')
                     ->label('Condition')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('Created At')
-                    ->dateTime()
-                    ->sortable(),
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('cylinders')
+                    ->label('Cylinders')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('chassis_number')
+                    ->label('Chassis Number')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('doors')
+                    ->label('Doors')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('color')
+                    ->label('Color')
+                    ->toggleable()
+                    ->sortable(), // Visible by default
+
+                TextColumn::make('seats')
+                    ->label('Seats')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('city_mpg')
+                    ->label('City MPG')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('highway_mpg')
+                    ->label('Highway MPG')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('engine_size')
+                    ->label('Engine Size')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('drive_type')
+                    ->label('Drive Type')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
+
+                TextColumn::make('brand.name') // Assuming a relationship with the Brand model
+                    ->label('Brand')
+                    ->toggleable()
+                    ->sortable(), // Visible by default
+
+                TextColumn::make('carModel.name') // Assuming a relationship with the CarModel model
+                    ->label('Car Model')
+                    ->toggleable()
+                    ->sortable(), // Visible by default
+
+
+
+                TextColumn::make('user.name') // Assuming a relationship with the User model
+                    ->label('User')
+                    ->toggleable()
+                    ->toggledHiddenByDefault(), // Hidden by default
             ])
             ->filters([
                 // Add filters if needed
@@ -182,7 +321,10 @@ class CarResource extends Resource
                 EditAction::make(), // Add Edit action
                 DeleteAction::make(), // Add Delete action
             ])
-            ->defaultSort('created_at', 'desc');
+            ->defaultSort('created_at', 'desc')
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
     }
 
     public static function getRelations(): array
