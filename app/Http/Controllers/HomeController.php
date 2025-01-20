@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,9 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view('frontend.home.index');
+        // fetch each car brand and each brand car number count
+        $brands = Brand::withCount('cars')->get();
+        return view('frontend.home.index', compact('brands'));
     }
     public function contact()
     {

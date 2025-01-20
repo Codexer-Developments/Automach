@@ -13,150 +13,23 @@
                 <div class="col-lg-12">
                     <div class="swiper partner-slide overflow-hidden">
                         <div class="swiper-wrapper">
+
+                            @foreach ($brands as $brand)
                             <div class="swiper-slide">
                                 <a href="#" class="partner-item style-1">
                                     <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner1.png"
-                                            src="assets/images/partner/partner1.png" alt="images">
+                                        <img class="lazyload" data-src="{{ $brand->logo ? asset('storage/' . $brand->logo) : asset('frontend/assets/images/placeholders/placeholder.webp') }}"
+                                            src="{{ $brand->logo ? asset('storage/' . $brand->logo) : asset('frontend/assets/images/placeholders/placeholder.webp') }}" alt="{{$brand->name}}">
                                     </div>
                                     <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Land Rover </div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
+                                        <div class="fs-16 fw-6 title text-color-2 font-2">{{$brand->name}}</div>
+                                        <span class="sub-title fs-12 fw-4 font-2">{{$brand->cars_count}} Car</span>
                                     </div>
                                 </a>
                             </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner2.png"
-                                            src="assets/images/partner/partner2.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Kia</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner3.png"
-                                            src="assets/images/partner/partner3.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Toyota</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner4.png"
-                                            src="assets/images/partner/partner4.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Jeep</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner5.png"
-                                            src="assets/images/partner/partner5.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Nissan</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner6.png"
-                                            src="assets/images/partner/partner6.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Ford</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner1.png"
-                                            src="assets/images/partner/partner1.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Land Rover </div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner2.png"
-                                            src="assets/images/partner/partner2.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Kia</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner3.png"
-                                            src="assets/images/partner/partner3.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Toyota</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner4.png"
-                                            src="assets/images/partner/partner4.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Jeep</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner5.png"
-                                            src="assets/images/partner/partner5.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Nissan</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
-                                    <div class="image">
-                                        <img class="lazyload" data-src="assets/images/partner/partner6.png"
-                                            src="assets/images/partner/partner6.png" alt="images">
-                                    </div>
-                                    <div class="content center">
-                                        <div class="fs-16 fw-6 title text-color-2 font-2">Ford</div>
-                                        <span class="sub-title fs-12 fw-4 font-2">271 Car</span>
-                                    </div>
-                                </a>
-                            </div>
+                            @endforeach
+
+
                         </div>
                     </div>
                     <div class="swiper-pagination4"></div>

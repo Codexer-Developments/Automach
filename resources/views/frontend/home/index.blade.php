@@ -7,7 +7,9 @@
 @include('frontend.home.category')
 @include('frontend.home.inquery')
 @include('frontend.home.cards')
-@include('frontend.home.recommend')
+{{-- @include('frontend.home.recommend') --}}
+@include('frontend.home.banner')
+@include('frontend.home.bodyType')
 
 
 
