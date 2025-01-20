@@ -49,6 +49,9 @@ class CarModelResource extends Resource
                     ->label('Brand')
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\TextColumn::make('cars_count') // Add this column
+                    ->label('Number of Cars')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Created At')
                     ->dateTime()
@@ -62,6 +65,11 @@ class CarModelResource extends Resource
                 DeleteAction::make(), // Add Delete action
             ])
             ->defaultSort('created_at', 'desc');
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->withCount('cars'); // Eager load the cars count
     }
 
     public static function getRelations(): array

@@ -13,7 +13,7 @@ class CarImage extends Model
     protected $fillable = ['car_id', 'image_path'];
 
     // An image belongs to a car
-    public function car(): BelongsTo
+    public function car()
     {
         return $this->belongsTo(Car::class);
     }
