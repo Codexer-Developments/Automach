@@ -157,43 +157,7 @@ class CarResource extends Resource
             ]);
     }
 
-    // public static function table(Table $table): Table
-    // {
-    //     return $table
-    //         ->columns([
-    //             Tables\Columns\TextColumn::make('name')
-    //                 ->label('Car Name')
-    //                 ->sortable()
-    //                 ->searchable(),
-    //             Tables\Columns\TextColumn::make('brand.name')
-    //                 ->label('Brand')
-    //                 ->sortable()
-    //                 ->searchable(),
-    //             Tables\Columns\TextColumn::make('carModel.name')
-    //                 ->label('Car Model')
-    //                 ->sortable()
-    //                 ->searchable(),
-    //             Tables\Columns\TextColumn::make('price')
-    //                 ->label('Price')
-    //                 ->sortable()
-    //                 ->money('USD'),
-    //             Tables\Columns\TextColumn::make('condition')
-    //                 ->label('Condition')
-    //                 ->sortable(),
-    //             Tables\Columns\TextColumn::make('created_at')
-    //                 ->label('Created At')
-    //                 ->dateTime()
-    //                 ->sortable(),
-    //         ])
-    //         ->filters([
-    //             // Add filters if needed
-    //         ])
-    //         ->actions([
-    //             EditAction::make(), // Add Edit action
-    //             DeleteAction::make(), // Add Delete action
-    //         ])
-    //         ->defaultSort('created_at', 'desc');
-    // }
+
 
     public static function table(Tables\Table $table): Tables\Table
     {
