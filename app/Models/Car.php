@@ -59,6 +59,11 @@ class Car extends Model
         return $this->belongsTo(Brand::class);
     }
 
+    public function BodyType(): BelongsTo
+    {
+        return $this->belongsTo(BodyType::class);
+    }
+
     // A car belongs to a car model
     public function carModel(): BelongsTo
     {

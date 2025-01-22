@@ -6,3 +6,14 @@
     height: 100%;
     object-fit: cover;
 }
+.type-image{
+    height: auto !important;
+}
+.type-image img{
+    width: 58px !important;
+    height: auto !important;
+    margin-bottom: 0px !important;
+}
+/* .partner-item:hover {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(50%) saturate(1000%) hue-rotate(180deg);
+} */

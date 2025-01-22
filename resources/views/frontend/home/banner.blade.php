@@ -5,8 +5,8 @@
                 <div class="tf-image-box style1 bg-orange flex-three ">
                     <div class="image">
                         <img class=" ls-is-cached lazyloaded"
-                            data-src="assets/images/img-box/find-car-1.png"
-                            src="assets/images/img-box/find-car-1.png" alt="images">
+                            data-src="{{ asset ('frontend/assets/images/img-box/find-car-2.png')}}"
+                            src="{{ asset ('frontend/assets/images/img-box/find-car-2.png')}}" alt="images">
                     </div>
                     <div class="content">
                         <h3 class="text-color-1"><a href="#">Are you looking for a car?</a></h3>
@@ -23,8 +23,8 @@
                 <div class="tf-image-box style1 bg-black flex-three ">
                     <div class="image">
                         <img class=" ls-is-cached lazyloaded"
-                            data-src="assets/images/img-box/find-car-2.png"
-                            src="assets/images/img-box/find-car-2.png" alt="images">
+                            data-src="{{ asset ('frontend/assets/images/img-box/find-car-1.png')}}"
+                            src="{{ asset ('frontend/assets/images/img-box/find-car-1.png')}}" alt="images">
                     </div>
                     <div class="content">
                         <h3 class="text-color-1"><a href="#">Do you want to sell a car?</a></h3>

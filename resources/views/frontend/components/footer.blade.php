@@ -106,7 +106,7 @@
                     </div>
                     <div class="col-lg-8 col-md-12">
                         <div class="footer-bottom-right flex-six flex-wrap ">
-                            <div class="title-bottom center">© {{ date('Y') }} Auto Decar. All rights reserved |
+                            <div class="title-bottom center">© {{ date('Y') }} AutoMach. All rights reserved |
                                 Design & Developed By <a class="text-color-3" href="http://codexer.co.uk">Codexer</a>
                             </div>
                             <div class="icon-social box-3 text-color-1">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BodyType;
 use App\Models\Brand;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class HomeController extends Controller
     {
         // fetch each car brand and each brand car number count
         $brands = Brand::withCount('cars')->get();
-        return view('frontend.home.index', compact('brands'));
+        $bodyTypes = BodyType::withCount('cars')->get();
+        return view('frontend.home.index', compact('brands', 'bodyTypes'));
     }
     public function contact()
     {

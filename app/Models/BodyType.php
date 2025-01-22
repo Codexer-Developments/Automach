@@ -10,4 +10,9 @@ class BodyType extends Model
         'name',
         'image_path',
     ];
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
 }
