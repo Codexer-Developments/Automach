@@ -67,31 +67,30 @@
                                           <p class="text-color-3 font">{{ $car->bodyType?->name ?? '-' }}</p>
                                       </div>
                                       <h5 class="link-style-1">
-                                          <a href="listing-detail-v1.html">2017 BMV X1 xDrive 20d
-                                              xline</a>
+                                          <a href="listing-detail-v1.html">{{ $car->name }}</a>
                                       </h5>
                                       <div class="icon-box flex flex-wrap">
                                           <div class="icons flex-three">
                                               <i class="icon-autodeal-km1"></i>
-                                              <span>72,491 kms</span>
+                                              <span>{{ number_format($car->miles) }} Miles</span>
                                           </div>
                                           <div class="icons flex-three">
                                               <i class="icon-autodeal-diesel"></i>
-                                              <span>Diesel</span>
+                                              <span>{{ $car->fuel_type }}</span>
                                           </div>
                                           <div class="icons flex-three">
                                               <i class="icon-autodeal-automatic"></i>
-                                              <span>Automatic</span>
+                                              <span>{{ $car->transmission }}</span>
                                           </div>
                                       </div>
-                                      <div class="money fs-20 fw-5 lh-25 text-color-3">$73,000</div>
+                                      <div class="money fs-20 fw-5 lh-25 text-color-3">£{{ number_format($car->price) }}</div>
                                       <div class="days-box flex justify-space align-center">
                                           <div class="img-author">
-                                              <img class="lazyload" data-src="assets/images/author/8.png"
-                                                  src="assets/images/author/8.png" alt="image">
+                                              <img class="lazyload"
+                                                  src="https://ui-avatars.com/api/?name={{$car->user?->name}}" alt="{{$car->user?->name}}">
                                               <span class="font text-color-2 fw-5">{{ $car->user?->name ?? '-' }}</span>
                                           </div>
-                                          <a href="listing-detail-v1.html" class="view-car">View car</a>
+                                          <a href="#" class="view-car">View car</a>
                                       </div>
                                   </div>
                               </div>

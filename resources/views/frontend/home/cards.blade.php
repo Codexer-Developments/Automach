@@ -3,19 +3,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="heading-section wow fadeInUpSmall" data-wow-delay="0.2s"
-                        data-wow-duration="1000ms">
+                    <div class="heading-section wow fadeInUpSmall" data-wow-delay="0.2s" data-wow-duration="1000ms">
                         <h2>Find your dream car easily and quickly</h2>
-                        <p class="mt-18">Browse thousands of new and used cars from all reputable brands on the
-                            market.</p>
+                        <p class="mt-18">Discover the perfect car for you with our easy-to-use tools and expert support.
+                        </p>
                     </div>
 
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="swiper-container overflow-visible tf-sw-mobile4" data-preview="4"
-                        data-space="30">
+                    <div class="swiper-container overflow-visible tf-sw-mobile4" data-preview="4" data-space="30">
                         <div class="swiper-wrapper grid-sw-4">
                             <div class="swiper-slide">
                                 <div class="tf-icon-box style-1">
@@ -31,14 +29,9 @@
                                         </svg>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="#">Browse inventory</a></h3>
-                                        <p>Find the ideal car for you and browse our affordable inventory.</p>
-                                        <div class="meta style">
-                                            <a href="#" class="btn-button">
-                                                <span>Search inventory</span>
-                                                <i class="icon-autodeal-next"></i>
-                                            </a>
-                                        </div>
+                                        <h3><a href="#">Advanced Search</a></h3>
+                                        <p>Use filters to find the perfect car based on your preferences. </p>
+
 
                                     </div>
 
@@ -62,14 +55,9 @@
                                         </svg>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="#">Get An Offer</a></h3>
-                                        <p>What's your car worth? Get the best value for your vehicle.</p>
-                                        <div class="meta style">
-                                            <a href="#" class="btn-button">
-                                                <span>Get trade-in Value</span>
-                                                <i class="icon-autodeal-next"></i>
-                                            </a>
-                                        </div>
+                                        <h3><a href="#">Affordable Prices</a></h3>
+                                        <p>Get the best deals and financing options for your dream car.</p>
+
                                     </div>
 
                                 </div>
@@ -88,15 +76,10 @@
                                         </svg>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="#">Apply For Financing</a></h3>
-                                        <p>Fill out our credit approval form for your next used vehicle loan.
+                                        <h3><a href="#">Wide Selection</a></h3>
+                                        <p>Explore thousands of cars from various brands and models.</p>
                                         </p>
-                                        <div class="meta style">
-                                            <a href="#" class="btn-button">
-                                                <span>Apply Now</span>
-                                                <i class="icon-autodeal-next"></i>
-                                            </a>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -117,15 +100,10 @@
                                         </svg>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="#">Expert Service</a></h3>
-                                        <p>Expert technicians will keep your vehicle in top running condition.
+                                        <h3><a href="#">Expert Support </a></h3>
+                                        <p>Our team is here to help you every step of the way.
                                         </p>
-                                        <div class="meta style">
-                                            <a href="#" class="btn-button">
-                                                <span>Schedule Service</span>
-                                                <i class="icon-autodeal-next"></i>
-                                            </a>
-                                        </div>
+
 
                                     </div>
 
