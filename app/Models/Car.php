@@ -39,7 +39,7 @@ class Car extends Model
     ];
 
     protected $casts = [
-        'image_urls' => 'array', // Cast image_urls to JSON
+        'image_urls' => 'array',
     ];
 
     protected static function boot()
@@ -76,15 +76,20 @@ class Car extends Model
         return $this->belongsTo(User::class);
     }
 
-    // A car has many images
-    public function images()
-    {
-        return $this->hasMany(CarImage::class);
-    }
-
     // A car belongs to many features
     public function features(): BelongsToMany
     {
         return $this->belongsToMany(Feature::class, 'car_feature');
+    }
+
+    public function getImageUrlsAttribute($value)
+    {
+        return json_decode($value, true);
+    }
+
+    // Mutator: Automatically encode array to JSON string
+    public function setImageUrlsAttribute($value)
+    {
+        $this->attributes['image_urls'] = json_encode($value);
     }
 }

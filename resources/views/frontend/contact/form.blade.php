@@ -72,12 +72,12 @@
                     <div class="wrap-info">
                         <div class="box-info">
                             <h5>Address</h5>
-                            <p>101 E 129th St, East Chicago, IN 46312 <br> United States</p>
+                            <p>81 Brakens Lane Alvaston Derby DE22 0AQ <br> United Kingdom</p>
                         </div>
                         <div class="box-info">
                             <h5>Infomation:</h5>
-                            <p>1-333-345-6868</p>
-                            <p>themesflat@gmail.com</p>
+                            <p>+44 20 8866 6435</p>
+                            <p>info@automach.co.uk</p>
                         </div>
                         <div class="box-info">
                             <h5>Opentime:</h5>

@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CarResource\Pages;
 use App\Filament\Resources\CarResource\RelationManagers;
 use App\Models\Car;
+// use Filament\Actions\Action;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
@@ -17,8 +18,12 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Notifications\Notification;
+use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Actions\Action;
 
 class CarResource extends Resource
 {
@@ -117,6 +122,11 @@ class CarResource extends Resource
                         '4WD' => '4WD',
                     ])
                     ->required(),
+                Forms\Components\Select::make('body_type_id')
+                    ->label('Body Type')
+                    ->relationship('BodyType', 'name')
+                    ->required()
+                    ->reactive(),
                 Forms\Components\Select::make('brand_id')
                     ->label('Brand')
                     ->relationship('brand', 'name')
@@ -154,6 +164,9 @@ class CarResource extends Resource
                     ->relationship('features', 'name')
                     ->columns(3) // Display checkboxes in 3 columns (adjust as needed)
                     ->required(),
+                Toggle::make('is_visible')
+                    ->label('Visible')
+                    ->default(true),
             ]);
     }
 
@@ -277,6 +290,11 @@ class CarResource extends Resource
                     ->label('User')
                     ->toggleable()
                     ->toggledHiddenByDefault(), // Hidden by default
+
+                BooleanColumn::make('is_visible')
+                    ->label('Visible')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 // Add filters if needed
@@ -284,6 +302,21 @@ class CarResource extends Resource
             ->actions([
                 EditAction::make(), // Add Edit action
                 DeleteAction::make(), // Add Delete action
+                Action::make('toggleVisibility') // Custom action to toggle visibility
+                ->label(fn (Car $record) => $record->is_visible ? 'Hide' : 'Show')
+                ->icon(fn (Car $record) => $record->is_visible ? 'heroicon-o-eye-slash' : 'heroicon-o-eye')
+                ->color(fn (Car $record) => $record->is_visible ? 'warning' : 'success')
+                ->action(function (Car $record) {
+                    $record->is_visible = !$record->is_visible;
+                    $record->save();
+
+                    // Show a notification
+                    Notification::make()
+                        ->title($record->is_visible ? 'Testimonial is now visible' : 'Testimonial is now hidden')
+                        ->success()
+                        ->send();
+                })
+                ->tooltip(fn (Car $record) => $record->is_visible ? 'Hide this testimonial' : 'Show this testimonial'),
             ])
             ->defaultSort('created_at', 'desc')
             ->bulkActions([

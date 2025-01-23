@@ -31,6 +31,7 @@ return new class extends Migration
             $table->integer('highway_mpg')->nullable();
             $table->string('engine_size');
             $table->string('drive_type');
+            $table->boolean('is_visible')->default(true); // Visibility status
             $table->json('image_urls')->nullable(); // Store image URLs as JSON
             $table->foreignId('brand_id')->constrained()->onDelete('cascade'); // Foreign key to brands
             $table->foreignId('car_model_id')->constrained()->onDelete('cascade'); // Foreign key to car_models
