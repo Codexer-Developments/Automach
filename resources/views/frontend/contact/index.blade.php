@@ -4,6 +4,7 @@
 
 @section('single_page_name', 'Contact Us')
 @include('frontend.components.inner-header')
+@include('frontend.components.social-header')
 
 @include('frontend.contact.form')
 @include('frontend.contact.map')

@@ -23,3 +23,9 @@
     overflow: hidden;
     object-fit: cover;
 }
+.swiper-image{
+    height: 467px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}

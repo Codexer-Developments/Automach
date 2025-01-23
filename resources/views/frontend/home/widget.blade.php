@@ -90,7 +90,7 @@
                                                   src="https://ui-avatars.com/api/?name={{$car->user?->name}}" alt="{{$car->user?->name}}">
                                               <span class="font text-color-2 fw-5">{{ $car->user?->name ?? '-' }}</span>
                                           </div>
-                                          <a href="#" class="view-car">View car</a>
+                                          <a href="{{ route('car.detail', $car->id) }}" class="view-car">View car</a>
                                       </div>
                                   </div>
                               </div>

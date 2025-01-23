@@ -4,6 +4,7 @@
 
 @section('single_page_name', 'Frequently asked questions')
 @include('frontend.components.inner-header')
+@include('frontend.components.social-header')
 
 
 
