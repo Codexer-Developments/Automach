@@ -6,19 +6,16 @@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="widget widget-menu footer-col-block">
                             <div class="footer-heading-desktop">
-                                <h4>About Auto Decar</h4>
+                                <h4>Car Brands</h4>
                             </div>
                             <div class="footer-heading-mobie">
-                                <h4>About Auto Decar</h4>
+                                <h4>Car Brands</h4>
                             </div>
                             <ul class="box-menu tf-collapse-content">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Careers With Us</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Corporate Policies</a></li>
-                                <li><a href="#">Investors</a></li>
-                                <li><a href="#">FAQs</a></li>
+                                {{-- <li><a href="#">About us</a></li> --}}
+                                @foreach ($recentBrands as $brand)
+                                <li>{{ $brand->name }}</li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
@@ -26,19 +23,17 @@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="widget widget-menu footer-col-block">
                             <div class="footer-heading-desktop">
-                                <h4>Popular used car</h4>
+                                <h4>Menu</h4>
                             </div>
                             <div class="footer-heading-mobie">
-                                <h4>Popular used car</h4>
+                                <h4>Menu</h4>
                             </div>
                             <ul class="box-menu tf-collapse-content">
-                                <li><a href="#">Chevrolet</a></li>
-                                <li><a href="#">Land Rover</a></li>
-                                <li><a href="#">Tesla</a></li>
-                                <li><a href="#">Volkswagen</a></li>
-                                <li><a href="#">Honda</a></li>
-                                <li><a href="#">Hyundai</a></li>
-                                <li><a href="#">Mercedes benz</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="#">Faq's</a></li>
+                                <li><a href="#">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -46,19 +41,16 @@
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="widget widget-menu footer-col-block">
                             <div class="footer-heading-desktop">
-                                <h4>Other</h4>
+                                <h4>Body Types</h4>
                             </div>
                             <div class="footer-heading-mobie">
-                                <h4>Other</h4>
+                                <h4>Body Types</h4>
                             </div>
                             <ul class="box-menu tf-collapse-content">
-                                <li><a href="#">How it work</a></li>
-                                <li><a href="#">Terms and Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Copyrights</a></li>
-                                <li><a href="#">Help center</a></li>
-                                <li><a href="#">Car sales trends</a></li>
-                                <li><a href="#">Personal loan</a></li>
+                                {{-- <li><a href="#">How it work</a></li> --}}
+                                @foreach ($recentBodyTypes as $bodyType)
+                                <li>{{ $bodyType->name }}</li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
