@@ -72,7 +72,7 @@
                                 <h4>Newsletter</h4>
                             </div>
                             <div class="tf-collapse-content">
-                                <form method="post" class="comment-form form-submit" action="#"
+                                <form method="post" class="comment-form comment-form-news form-submit" action="#"
                                     accept-charset="utf-8">
                                     <p class="font-2">Stay on top of the latest car trends, tips, and tricks for
                                         selling your car.</p>
@@ -126,7 +126,7 @@
     @push('scripts')
     <script>
         $(document).ready(function () {
-            $('.comment-form').on('submit', function (e) {
+            $('.comment-form-news').on('submit', function (e) {
                 e.preventDefault(); // Prevent the default form submission
 
                 // Clear any previous messages
@@ -146,7 +146,7 @@
                             $('#message').text(response.message).addClass('text-success').removeClass('text-warning');
 
                             // Clear the email input field
-                            $('.comment-form input[name="email"]').val('');
+                            $('.comment-form-news input[name="email"]').val('');
                         } else {
                             // Display error message
                             $('#message').text(response.message).addClass('text-warning').removeClass('text-success');

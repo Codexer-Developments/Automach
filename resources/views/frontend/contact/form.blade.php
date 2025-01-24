@@ -31,7 +31,7 @@
                                 </fieldset>
                                 <fieldset class="phone-wrap style-text">
                                     <label class="font-1 fs-14 fw-5">Subject</label>
-                                    <input type="text" class="tb-my-input" name="subject" placeholder="Enter Keyword"
+                                    <input type="text" class="tb-my-input" name="subject" placeholder="Enter Subject"
                                         required>
                                 </fieldset>
                             </div>
@@ -48,7 +48,7 @@
                                 </button>
                             </div>
                         </form>
-
+<br>
                         <!-- Display success message -->
                         @if (session('success'))
                             <p class="text-success">{{ session('success') }}</p>

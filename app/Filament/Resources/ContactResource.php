@@ -66,7 +66,10 @@ class ContactResource extends Resource
             ->headerActions([
                 // Explicitly define header actions (leave this empty to remove all actions)
             ])
-            ->defaultSort('created_at', 'desc');
+            ->defaultSort('created_at', 'desc')
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
     }
     public static function getRelations(): array
     {
