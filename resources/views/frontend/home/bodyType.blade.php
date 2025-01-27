@@ -5,7 +5,7 @@
                 <div class="heading-section flex align-center justify-space flex-wrap gap-20">
                     <h2 class="wow fadeInUpSmall" data-wow-delay="0.2s" data-wow-duration="1000ms">Search by
                         body</h2>
-                    <a href="#" class="tf-btn-arrow wow fadeInUpSmall" data-wow-delay="0.2s"
+                    <a href="{{ route('shop') }}" class="tf-btn-arrow wow fadeInUpSmall" data-wow-delay="0.2s"
                         data-wow-duration="1000ms">View all<i class="icon-autodeal-btn-right"></i></a>
                 </div>
             </div>

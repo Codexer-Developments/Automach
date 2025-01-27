@@ -16,7 +16,7 @@
 
                             @foreach ($brands as $brand)
                             <div class="swiper-slide">
-                                <a href="#" class="partner-item style-1">
+                                <a href="{{ route('shop') }}" class="partner-item style-1">
                                     <div class="image">
                                         <img class="lazyload" data-src="{{ $brand->logo ? asset('storage/' . $brand->logo) : asset('frontend/assets/images/placeholders/placeholder.webp') }}"
                                             src="{{ $brand->logo ? asset('storage/' . $brand->logo) : asset('frontend/assets/images/placeholders/placeholder.webp') }}" alt="{{$brand->name}}">

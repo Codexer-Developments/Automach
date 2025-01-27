@@ -1,4 +1,4 @@
-<section class="loan-calculator inner-1 bg-2">
+<section class="loan-calculator inner-1 bg-2" id="inquery">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

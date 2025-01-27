@@ -12,7 +12,7 @@
                         <h3 class="text-color-1"><a href="#">Are you looking for a car?</a></h3>
                         <p class="text-color-1">Save time and effort as you no longer need to visit multiple
                             stores to find the right car.</p>
-                        <a href="#" class="find-cars">
+                        <a href="{{ route('shop') }}" class="find-cars">
                             <span>Find cars</span>
                             <i class="icon-autodeal-search"></i>
                         </a>
@@ -30,8 +30,8 @@
                         <h3 class="text-color-1"><a href="#">Do you want to sell a car?</a></h3>
                         <p class="text-color-1">Find your perfect car match and sell your car quickly with
                             our user-friendly online service.</p>
-                        <a href="#" class="find-cars">
-                            <span>Find cars</span>
+                        <a href="{{ route('contact') }}" class="find-cars">
+                            <span>Contact Us</span>
                             <i class="icon-autodeal-search"></i>
                         </a>
                     </div>

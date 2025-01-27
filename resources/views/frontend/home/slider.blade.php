@@ -31,7 +31,7 @@
 
                                          <div class="chat-wrap flex-three wow fadeInUp" data-wow-delay="600ms"
                                              data-wow-duration="1000ms">
-                                             <a href="#" class="chat">Make Inquiry</a>
+                                             <a href="{{ route('home') }}#inquery" class="chat">Make Inquiry</a>
                                              <div class="flex-three">
 
                                                  <div class="content-chat mw-340">
@@ -77,7 +77,7 @@
 
                                          <div class="chat-wrap flex-three wow fadeInUp" data-wow-delay="600ms"
                                              data-wow-duration="1000ms">
-                                             <a href="#" class="chat">Make Inquiry</a>
+                                             <a href="{{ route('home') }}#inquery" class="chat">Make Inquiry</a>
                                              <div class="flex-three">
 
                                                  <div class="content-chat mw-340">
@@ -122,7 +122,7 @@
 
                                         <div class="chat-wrap flex-three wow fadeInUp" data-wow-delay="600ms"
                                             data-wow-duration="1000ms">
-                                            <a href="#" class="chat">Make Inquiry</a>
+                                            <a href="{{ route('home') }}#inquery" class="chat">Make Inquiry</a>
                                             <div class="flex-three">
 
                                                 <div class="content-chat mw-340">
