@@ -23,9 +23,17 @@
     overflow: hidden;
     object-fit: cover;
 }
-.swiper-image{
+.swiper-image {
     height: 467px;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
+}
+.sc-button-filter {
+    padding: 15px 21.5px;
+    min-width: 203px;
+    text-align: center;
+    border-bottom-style: none !important;
+    border-right-style: none !important;
+    margin-left: 10px !important;
 }

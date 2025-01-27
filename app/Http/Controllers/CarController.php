@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BodyType;
+use App\Models\Brand;
 use App\Models\Car;
 use Illuminate\Http\Request;
 
@@ -15,4 +17,12 @@ class CarController extends Controller
         // Pass the car data to the view
         return view('frontend.shop.car', compact('car'));
     }
+
+
+    public function getModels(Brand $brand)
+    {
+        return $brand->carModels;
+    }
+
+
 }
