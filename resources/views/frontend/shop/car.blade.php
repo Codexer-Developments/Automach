@@ -1,4 +1,13 @@
 @extends('layouts.frontend')
+@section('title', "$car->name | Find Your Perfect Car - Buy & Sell Cars in the UK")
+
+@if ($car->image_urls && count($car->image_urls) > 0)
+    @php
+        $firstImage = $car->image_urls[0]; // Get the first image
+    @endphp
+    @section('ogimage', asset(url('storage/' . $firstImage['url'])))
+@endif
+@section('ogimage', asset(url('storage/' . $blog->thumbnail)))
 @section('content')
     @include('frontend.components.header-two')
 
@@ -305,7 +314,8 @@
                                 <div class="listing-calculator loan-calculator-form" id="scrollspyHeading4">
                                     <div class="box-title">
                                         <h2 class="title-ct">Send an Inquiry</h2>
-                                        <p>Have questions about this car? Send us a message, and we'll get back to you
+                                        <p>Have questions about this car? Send us a message, and we'll get back to
+                                            you
                                             shortly.
                                         </p>
                                     </div>
