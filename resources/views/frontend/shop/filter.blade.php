@@ -35,7 +35,8 @@
 
                                             <!-- Model Selection -->
                                             <div class="form-group-1">
-                                                <input type="hidden" name="car_model_id" id="selected_model" value="{{ $selectedModel ?? '' }}">
+                                                <input type="hidden" name="car_model_id" id="selected_model"
+                                                    value="{{ $selectedModel ?? '' }}">
 
                                                 <div class="group-select" id="model-select">
                                                     <div class="nice-select" tabindex="0">
@@ -46,8 +47,9 @@
                                                             <li data-value=""
                                                                 class="option {{ !$selectedModel ? 'selected' : '' }}">
                                                                 Model</li>
-                                                                @foreach ($models as $model)
-                                                                <li data-value="{{ $model->id }}" class="option {{ $selectedModel == $model->id ? 'selected' : '' }}">
+                                                            @foreach ($models as $model)
+                                                                <li data-value="{{ $model->id }}"
+                                                                    class="option {{ $selectedModel == $model->id ? 'selected' : '' }}">
                                                                     {{ $model->name }}
                                                                 </li>
                                                             @endforeach
@@ -229,7 +231,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Brand Selection Handler
-
+            document.querySelectorAll('#brand-select .option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const brandId = this.dataset.value;
+                    document.getElementById('selected_brand').value = brandId;
+                });
+            });
 
             // Model Selection Handler
             document.querySelectorAll('#model-select .option').forEach(option => {

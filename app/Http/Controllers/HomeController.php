@@ -16,9 +16,10 @@ class HomeController extends Controller
         // fetch each car brand and each brand car number count
         $brands = Brand::withCount('cars')->get();
         $bodyTypes = BodyType::withCount('cars')->get();
+        $models = CarModel::all();
         $cars = Car::with(['bodyType', 'user'])->where('is_visible', true)->orderBy('created_at', 'desc')->take(8)->get();
 
-        return view('frontend.home.index', compact('brands', 'bodyTypes', 'cars'));
+        return view('frontend.home.index', compact('brands', 'bodyTypes', 'cars', 'models'));
     }
     public function contact()
     {
