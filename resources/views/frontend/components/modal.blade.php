@@ -284,7 +284,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="compare.html" class="button tfcl-compare-listing-button">Compare</a>
+                            <a href="#" class="button tfcl-compare-listing-button">Compare</a>
                         </div>
                     </div>
 

@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="heading-section flex align-center justify-space flex-wrap gap-20">
                     <h2>Recommended Used Cars For You</h2>
-                    <a href="blog-grid.html" class="tf-btn-arrow">View all<i class="icon-autodeal-btn-right"></i></a>
+                    <a href="{{ route('shop') }}" class="tf-btn-arrow">View all<i class="icon-autodeal-btn-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-12">

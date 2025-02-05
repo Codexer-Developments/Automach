@@ -65,7 +65,7 @@
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="assets/images/logo/logo@2x.png" alt=""
+            <div class="nav-logo"><a href="{{ route('home') }}"><img src="assets/images/logo/logo@2x.png" alt=""
                         width="197" height="48"></a></div>
             <div class="bottom-canvas">
                 <div class="login-box flex align-center">
@@ -74,7 +74,7 @@
                 </div>
                 <div class="menu-outer"></div>
                 <div class="button-mobi-sell">
-                    <a class="sc-button btn-icon center" href="add-listing.html">
+                    <a class="sc-button btn-icon center" href="{{ route('home') }}">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_4960_5223)">

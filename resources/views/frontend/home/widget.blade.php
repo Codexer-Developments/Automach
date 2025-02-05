@@ -67,7 +67,7 @@
                                           <p class="text-color-3 font">{{ $car->bodyType?->name ?? '-' }}</p>
                                       </div>
                                       <h5 class="link-style-1">
-                                          <a href="listing-detail-v1.html">{{ $car->name }}</a>
+                                          <a href="{{ route('car.detail', $car->id) }}">{{ $car->name }}</a>
                                       </h5>
                                       <div class="icon-box flex flex-wrap">
                                           <div class="icons flex-three">
