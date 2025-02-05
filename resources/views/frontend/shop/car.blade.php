@@ -7,7 +7,6 @@
     @endphp
     @section('ogimage', asset(url('storage/' . $firstImage['url'])))
 @endif
-@section('ogimage', asset(url('storage/' . $blog->thumbnail)))
 @section('content')
     @include('frontend.components.header-two')
 
