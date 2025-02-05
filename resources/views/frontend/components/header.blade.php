@@ -8,7 +8,7 @@
                             <div class="inner-container flex justify-space align-center">
                                 <!-- Logo Box -->
                                 <div class="logo-box flex">
-                                    <div class="logo"><a href="index.html">
+                                    <div class="logo"><a href="{{ route('home') }}">
                                             <img class="lazyload"
                                                 data-src="{{ asset('frontend/logo/automach_light.svg') }}"
                                                 src="{{ asset('frontend/logo/automach_light.svg') }}" alt=""
@@ -63,7 +63,7 @@
             <div class="mobile-menu">
                 <div class="menu-backdrop"></div>
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="index.html">
+                    <div class="nav-logo"><a href="{{ route('home') }}">
                             <img class="lazyload" data-src="{{ asset('frontend/logo/automach_light.svg') }}"
                                 src="{{ asset('frontend/logo/automach_dark.svg') }}" alt="" width="197" height="48"></a>
                     </div>

@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12">
                         <div class="logo-footer style box-1">
-                            <a href="index.html">
+                            <a href="{{ route('home') }}">
                                 <img class="lazyload" data-src="{{ asset('frontend/logo/automach_light.svg') }}"
                                     src="{{ asset('frontend/logo/automach_light.svg') }}" alt="img" width="225"
                                     height="40">
